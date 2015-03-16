@@ -8,8 +8,9 @@ package clientServer.parameter;
 public enum Errors {
 	
 	MISC(0),
-	
-	FORBIDDEN_ACCESS(1);
+	FORBIDDEN_ACCESS(1),
+	FORBIDDEN_GET_ACCESS(2),
+	FORBIDDEN_POST_ACCESS(3);
 	
 	/**
 	 * Gets the error message.
@@ -21,14 +22,23 @@ public enum Errors {
 		
 		switch (this) {
 			case FORBIDDEN_ACCESS:
-				message =  "Accès réfusé";
+				message =  "Accï¿½s rï¿½fusï¿½.";
+			break;
+			
+			case FORBIDDEN_GET_ACCESS:
+				message =  "Accï¿½s GET rï¿½fusï¿½.";
+			break;
+			
+			case FORBIDDEN_POST_ACCESS:
+				message =  "Accï¿½s POST rï¿½fusï¿½.";
 			break;
 		
 			case MISC:
-				message =  "Erreur non-spécifiée";
+				message =  "Erreur non-spï¿½cifiï¿½e.";
 			break;
+			
 			default :
-				message =  "Erreur inconnue";
+				message =  "Erreur inconnue.";
 			;
 		}
 		

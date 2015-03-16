@@ -27,10 +27,11 @@ public class Utilities  {
 		String endTag = "";
 
 		if (start == null) {
-			startTag = "TRACE >>>";
+			startTag = "TRACE\t\t>>>";
 		} else if (start == true) {
-			startTag = "TRACE BEGIN >>>";
+			startTag = "TRACE\tBEGIN\t>>>";
 		} else {
+			startTag = "TRACE\tEND\t>>>";
 			if (returning == true) {
 				endTag = "<<< RETURN";
 			} else {
@@ -41,7 +42,7 @@ public class Utilities  {
 		String trace = "";
 		
 		if	(ParametersI.DEBUG_ALL) {
-			trace = startTag + " " + className + methodName + " : " + message + " " + endTag;
+			trace = startTag + "\t" + className + methodName + "\t:\t" + message + "\t" + endTag;
 		}
 		
 		if (trace.length() > 0) {			
