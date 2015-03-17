@@ -22,19 +22,19 @@ public enum Errors {
 		
 		switch (this) {
 			case FORBIDDEN_ACCESS:
-				message =  "Accï¿½s rï¿½fusï¿½.";
+				message =  "Accès refusé.";
 			break;
 			
 			case FORBIDDEN_GET_ACCESS:
-				message =  "Accï¿½s GET rï¿½fusï¿½.";
+				message =  "Accés GET refusé.";
 			break;
 			
 			case FORBIDDEN_POST_ACCESS:
-				message =  "Accï¿½s POST rï¿½fusï¿½.";
+				message =  "Accès POST refusé.";
 			break;
 		
 			case MISC:
-				message =  "Erreur non-spï¿½cifiï¿½e.";
+				message =  "Erreur non-spécifiée.";
 			break;
 			
 			default :

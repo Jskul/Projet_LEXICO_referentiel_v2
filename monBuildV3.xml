@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Element root -->
+<project name="buildSql" default="DDL" basedir=".">
+<!-- 
+	default : cible par défaut qui doit être executée 
+	basedir : chemin absolu du repertoire de travail  => répertoire du projet
+-->
+
+	<echo message="Debut du fichier Ant"/>
+	
+	<!-- nom du projet et version -->
+	<property name="nomProjet" value="buildSql" />
+	<property name="version" value="1.0" />
+
+	<!-- Proprietes globales - les noms sont libres-->
+	<property name="src.java.dir" 	value="ejbModule" />
+	<property name="lib.dir" 		value="C:\httpd\lib\ant" />
+	
+	<!-- répertoire qui accueillera la compilation de notre projet -->
+	<property name="build.dir" 		value="mesBin" />
+	
+	<!-- le Classpath du projet pour la compilation
+		**/       signifie qu'il faut utiliser tous les sous répertoire de lib.dir
+		**/*.jar  il faut donc utiliser tous les *.jar du repertoire de lib.dir
+					et de tout ces sous-répertoires
+					
+		Attribut 	Rôle 
+		id 			Définit un identifiant pour l'ensemble qui pourra ainsi être réutilisé 
+		includes 	Liste des fichiers à inclure 
+		excludes 	Liste des fichiers à exclure 
+		refid 		Demande la réutilisation d'un ensemble dont l'identifiant est fourni comme valeur 
+		
+	 -->
+		<path id="project.classpath">
+			<fileset dir="${lib.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+	
+	<!-- les fichiers de configuration qui doivent etre dans le classpath 
+			Dans notre cas : persistence.xml
+	-->
+	<patternset id="conf">
+		<include name="**/*.xml" />
+		<include name="**/*.properties" />
+	</patternset>
+	
+
+<!-- Les Cibles -->	
+
+	<!-- Nettoyage projet -->
+	<target name="clean" description="Nettoyer le projet">
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<!-- Compilation projet : il dépend de la cible clean-->
+	<target name="compile" depends="clean">
+		<!-- javac est le compilateur, on compile ce qu'il y a dans src (voir property src.java.dir )-->
+		<javac srcdir="${src.java.dir}" destdir="${build.dir}" classpathref="project.classpath" includeantruntime="false"/>
+	</target>
+
+
+	
+	<!-- Copier les fichiers de configuration dans le classpath -->
+	<target name="copyconf">
+		<copy todir="${build.dir}">
+			<fileset dir="${src.java.dir}">
+				<patternset refid="conf" />
+			</fileset>
+		</copy>
+	</target>
+	
+	
+	<!-- Hibernate Tools -->
+	<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask"
+		classpathref="project.classpath" />
+
+
+<!-- Generer le schema de la base -->
+	<target name="DDL" depends="compile, copyconf" description="Génération DDL base">
+
+		<mkdir dir="ddl" />
+		<hibernatetool destdir="${basedir}">
+			<classpath path="${build.dir}" />
+			<!-- Utiliser META-INF/persistence.xml -->
+			<jpaconfiguration />
+			<!-- export  false-->
+			<hbm2ddl drop="true" create="true" export="false"
+				outputfilename="ddl/schema.sql" delimiter=";" format="true" />
+		</hibernatetool>
+	</target>
+
+	
+</project>

@@ -7,7 +7,7 @@ package clientServer.parameter;
  */
 public interface ParametersI {
 
-	public static final String PROJECT_ENCODING = "UTF-8";
+	public static final String PROJECT_ENCODING = "iso-8859-1";
 	
 
 	

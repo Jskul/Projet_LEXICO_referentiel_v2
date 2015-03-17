@@ -4,31 +4,31 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
- * An enum of cancelation origins.
+ * An enum of cancelation messages.
  * 
  * @author JL
  */
-public enum CancelationOrigins {
+public enum Cancelations {
 	
 	MISC(0),
 	
 	LEXICON_UPLOADING(1);
 	
 	/**
-	 * Gets the cancelation origin message.
+	 * Gets the cancelation message.
 	 * 
-	 * @return	String	A cancelation origin message.
+	 * @return	String	A cancelation message.
 	 */
 	public String getMessage() {
 		String message = "";
 		
 		switch (this) {
 			case LEXICON_UPLOADING:
-				message =  "Abandon de l'importation du rï¿½fï¿½rentiel.";
+				message =  "Abandon de l'importation du référentiel.";
 			break;
 		
 			case MISC:
-				message =  "Action abandonnï¿½e.";
+				message =  "Action abandonnée.";
 			break;
 			
 			default :
@@ -57,14 +57,14 @@ public enum CancelationOrigins {
 	 * 
 	 * @param	code	int	A cancelation code.
 	 */
-	private CancelationOrigins (int code) {
+	private Cancelations (int code) {
 		this.code = code;
 	}
 	
 	/**
 	 * Gets the cancelation code.
 	 *  
-	 * @return	int	A A cancelation code.
+	 * @return	int	A cancelation code.
 	 */
 	public int getCode () {
 		return this.code;
