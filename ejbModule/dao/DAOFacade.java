@@ -14,6 +14,7 @@ import dao.editionDAO.EditionDAO;
 import dao.interrogation.InterrogationDAO;
 import entity.CGram;
 import entity.Lemme;*/
+import entity.FlatLexique380Item;
 
 /**
  * A facade for DAO.
@@ -23,7 +24,30 @@ import entity.Lemme;*/
 @Singleton
 @LocalBean
 public class DAOFacade {
+	
+	@EJB
+	private LexiconUploadDAO lexiconUploadDAO;
+	
+	public boolean persist (FlatLexique380Item item) {
+		Utilities.trace(this.getClass().getName(), ".persist()", null, true, false);
+		boolean status = false;
+		status = lexiconUploadDAO.persist(item);
+		Utilities.trace(this.getClass().getName(), ".persist()", null, false, true);
+		return status;
+	}
 
+	/**
+	 * TODO
+	 * 
+	 * @return
+	 */
+	public boolean emptyLexique380() {
+		Utilities.trace(this.getClass().getName(), ".emptyLexique380()", null, true, false);
+		boolean status = lexiconUploadDAO.emptyLexique380();
+		Utilities.trace(this.getClass().getName(), ".emptyLexique380()", null, false, true);
+		return status;
+	}
+	
 //	@EJB
 //	private DBInitializationDAO dbInitializationDAO;
 //	@EJB

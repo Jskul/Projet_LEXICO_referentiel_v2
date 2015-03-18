@@ -10,5 +10,10 @@ import javax.ejb.Remote;
 @Remote
 public interface ServiceFacadeI {
 
-	//public 
+	public boolean persistLexique380Line(String line);
+
+	public boolean emptyLexique380();
+	
+	
+	
 }
