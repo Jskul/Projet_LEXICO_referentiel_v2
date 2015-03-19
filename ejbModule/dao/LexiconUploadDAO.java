@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
@@ -43,17 +45,23 @@ public class LexiconUploadDAO {
 	 * 
 	 * @return
 	 */
-	public boolean emptyLexique380() {
+	public int emptyLexique380() {
 		Utilities.trace(this.getClass().getName(), ".emptyLexique380()", null, true, false);
-		boolean status = false;
-		int deletedCount = em.createQuery("DELETE FROM FlatLexique380").executeUpdate(); // TODO named request
+		int deletedCount = em.createNamedQuery("Empty FlatLexique380Item").executeUpdate();
 		Utilities.trace(this.getClass().getName(), ".emptyLexique380()", "deletedCount = " + deletedCount, null, false);
-		if (deletedCount > 0) {
-			status = true;
-		}
 		Utilities.trace(this.getClass().getName(), ".emptyLexique380()", null, false, true);
-		return status;
+		return deletedCount;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	public int countLexique380Items() {
+		Utilities.trace(this.getClass().getName(), ".countLexique380Items()", null, true, false);
+		int itemCount = ((Long) em.createNamedQuery("Count FlatLexique380Item items").getSingleResult()).intValue();
+		Utilities.trace(this.getClass().getName(), ".countLexique380Items()", null, false, false);
+		return itemCount;
+	}
 
 }

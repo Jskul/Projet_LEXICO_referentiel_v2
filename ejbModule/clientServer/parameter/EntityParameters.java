@@ -8,9 +8,9 @@ package clientServer.parameter;
 public interface EntityParameters {
 
 	/*
-	 * Entity: FlatLexique380
+	 * Entity: FlatLexique380Item
 	 */
-	public static final String TABLE_FLAT_LEXIQUE_380_NAME = "FlatLexique380";
+	public static final String TABLE_FLAT_LEXIQUE_380_ITEM_NAME = "FlatLexique380";
 	
 	public static final String LEXIQUE_380_FIELD_ID_NAME = "id";
 	public static final boolean LEXIQUE_380_FIELD_ID_NULLABLE = false;
@@ -53,7 +53,7 @@ public interface EntityParameters {
 
 	public static final String LEXIQUE_380_FIELD_INFOVER_NAME = "infover";
 	public static final boolean LEXIQUE_380_FIELD_INFOVER_NULLABLE = true;
-	public static final int LEXIQUE_380_FIELD_INFOVER_LENGTH = 64;
+	public static final int LEXIQUE_380_FIELD_INFOVER_LENGTH = 256;
 
 	public static final String LEXIQUE_380_FIELD_NBHOMOGR_NAME = "nbhomogr";
 	public static final boolean LEXIQUE_380_FIELD_NBHOMOGR_NULLABLE = true;
@@ -136,17 +136,41 @@ public interface EntityParameters {
 	public static final String LEXIQUE_380_FIELD_NBMORPH_NAME = "nbmorph";
 	public static final boolean LEXIQUE_380_FIELD_NBMORPH_NULLABLE = true;
 
+	/*
+	 * Entity: Lemme
+	 */
+	public static final String TABLE_LEMME_NAME = "Lemme";
 
-	
-	
-	
-	
-	
-	
-	
-	
+	public static final String LEMME_FIELD_ID_NAME = "id";
+	public static final boolean LEMME_FIELD_ID_NULLABLE = false;
 
+	public static final String LEMME_FIELD_CGRAM_NAME = "cgram";
+	public static final boolean LEMME_FIELD_CGRAM_NULLABLE = false;
 	
+	public static final String LEMME_FIELD_FREQUENCE_LIVRES_NAME = "frequenceLivres";
+	public static final boolean LEMME_FIELD_FREQUENCE_LIVRES_NULLABLE = true;
+
+	public static final String LEMME_FIELD_FREQUENCE_FILMS_NAME = "frequenceFilms";
+	public static final boolean LEMME_FIELD_FREQUENCE_FILMS_NULLABLE = true;
+
+	/*
+	 * Entity: CGram
+	 */
+	public static final String TABLE_CGRAM_NAME = "CGram";
+	
+	public static final String CGRAM_FIELD_ID_NAME = "id";
+	public static final boolean CGRAM_FIELD_ID_NULLABLE = false;
+	
+	public static final String CGRAM_FIELD_LIBELLE_NAME = "libelle";
+	public static final boolean CGRAM_FIELD_LIBELLE_NULLABLE = false;
+	
+	/*
+	 * Entity: CGramArticle
+	 */
+	public static final String TABLE_CGRAM_ARTICLE_NAME = "CGramArticle";
+	
+	public static final String CGRAM_ARTICLE_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
+	public static final boolean CGRAM_ARTICLE_FIELD_SOUS_LIBELLE_NULLABLE = true;
 	
 
 	

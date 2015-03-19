@@ -1,5 +1,8 @@
 package clientServer.service;
 
+import java.io.File;
+import java.util.Map;
+
 import javax.ejb.Remote;
 
 /**
@@ -10,9 +13,10 @@ import javax.ejb.Remote;
 @Remote
 public interface ServiceFacadeI {
 
-	public boolean persistLexique380Line(String line);
+	public Map<String,String> persistLexique380File(File file);
+//	public boolean persistLexique380Line(String line); // Supprimer
 
-	public boolean emptyLexique380();
+//	public int emptyLexique380(); // Supprimer
 	
 	
 	

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import clientServer.parameter.EntityParameters;
 
@@ -18,7 +19,7 @@ import clientServer.parameter.EntityParameters;
  * @author JL
  */
 @Entity
-@Table(name=EntityParameters.TABLE_FLAT_LEXIQUE_380_NAME)
+@Table(name=EntityParameters.TABLE_FLAT_LEXIQUE_380_ITEM_NAME)
 public class FlatLexique380Item extends FlatLexiconItem implements Serializable {
 	
 	/**

@@ -37,15 +37,26 @@ public class DAOFacade {
 	}
 
 	/**
+	 * 
+	 * @return
+	 */
+	public int countLexique380Items() {
+		Utilities.trace(this.getClass().getName(), ".countLexique380Items()", null, true, false);
+		int itemCount = lexiconUploadDAO.countLexique380Items();
+		Utilities.trace(this.getClass().getName(), ".countLexique380Items()", null, false, false);
+		return itemCount;
+	}
+	
+	/**
 	 * TODO
 	 * 
 	 * @return
 	 */
-	public boolean emptyLexique380() {
+	public int emptyLexique380() {
 		Utilities.trace(this.getClass().getName(), ".emptyLexique380()", null, true, false);
-		boolean status = lexiconUploadDAO.emptyLexique380();
+		int deletedCount = lexiconUploadDAO.emptyLexique380();
 		Utilities.trace(this.getClass().getName(), ".emptyLexique380()", null, false, true);
-		return status;
+		return deletedCount;
 	}
 	
 //	@EJB
