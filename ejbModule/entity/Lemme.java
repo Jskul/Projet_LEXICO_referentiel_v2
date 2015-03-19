@@ -39,10 +39,7 @@ public class Lemme implements Serializable {
 	private int id;
 	
 	@OneToOne (	cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch=FetchType.LAZY)
-	@JoinColumn(name = "id", unique = false, nullable = false)
-//	@Column(	name=EntityParameters.LEMME_FIELD_CGRAM_NAME,
-//				nullable=EntityParameters.LEMME_FIELD_CGRAM_NULLABLE
-//			)
+	@JoinColumn(unique=false, nullable=false)
 	private CGram cgram;
 	
 	@Column(	name=EntityParameters.LEMME_FIELD_FREQUENCE_LIVRES_NAME,
@@ -51,8 +48,8 @@ public class Lemme implements Serializable {
 	private Float frequenceLivres;
 	
 	@Column(	name=EntityParameters.LEMME_FIELD_FREQUENCE_FILMS_NAME,
-			nullable=EntityParameters.LEMME_FIELD_FREQUENCE_FILMS_NULLABLE
-		)
+				nullable=EntityParameters.LEMME_FIELD_FREQUENCE_FILMS_NULLABLE
+			)
 	private Float frequenceFilms;
 	
 	/**

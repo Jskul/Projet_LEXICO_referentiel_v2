@@ -67,6 +67,9 @@ public class ServiceFacadeBean implements ServiceFacadeI {
 
 	/**
 	 * TODO
+	 * 
+	 * Le client (?) doit tester si le fichier existe avant toute chose
+	 * Puis le supprimer
 	 */
 	@SuppressWarnings("resource")
 	@Override

@@ -172,6 +172,20 @@ public interface EntityParameters {
 	public static final String CGRAM_ARTICLE_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
 	public static final boolean CGRAM_ARTICLE_FIELD_SOUS_LIBELLE_NULLABLE = true;
 	
-
+	/*
+	 * Entity: CGramAdjectif
+	 */
+	public static final String TABLE_CGRAM_ADJECTIF_NAME = "CGramAdjectif";
+	
+	public static final String CGRAM_ADJECTIF_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
+	public static final boolean CGRAM_ADJECTIF_FIELD_SOUS_LIBELLE_NULLABLE = true;
+	
+	/*
+	 * Entity: CGramPronom
+	 */
+	public static final String TABLE_CGRAM_PRONOM_NAME = "CGramAdjectif";
+	
+	public static final String CGRAM_PRONOM_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
+	public static final boolean CGRAM_PRONOM_FIELD_SOUS_LIBELLE_NULLABLE = true;
 	
 }

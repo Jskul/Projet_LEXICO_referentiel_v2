@@ -22,7 +22,7 @@ public interface ParametersI {
 	
 	/* Debugging flags */
 	
-	public static final boolean DEBUG_ALL = false;
+	public static final boolean DEBUG_ALL = true;
 	
 
 	

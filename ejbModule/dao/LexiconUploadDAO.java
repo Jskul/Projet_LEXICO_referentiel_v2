@@ -33,6 +33,7 @@ public class LexiconUploadDAO {
 		boolean status = false;
 		if (item != null) {
 			em.persist(item);
+			//em.flush();
 			status = true;
 		}
 
