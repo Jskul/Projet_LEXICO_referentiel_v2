@@ -20,9 +20,8 @@ import clientServer.parameter.EntityParameters;
  * @author ludovic
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name=EntityParameters.TABLE_CGRAM_NAME)
-public abstract class CGram implements Serializable {
+public class CGram implements Serializable {
 	
 	/**
 	 * TODO
@@ -42,10 +41,16 @@ public abstract class CGram implements Serializable {
 			)
 	private String libelle;
 	
+	@Column(	name=EntityParameters.CGRAM_FIELD_SOUS_LIBELLE_NAME,
+			nullable=EntityParameters.CGRAM_FIELD_SOUS_LIBELLE_NULLABLE
+		)
+	private String sousLibelle;
+
 	/**
 	 * Default constructor.
 	 */
 	public CGram () {
+		
 	}
 
 	/**
@@ -66,6 +71,30 @@ public abstract class CGram implements Serializable {
 	public CGram(int id, String libelle) {
 		this.id = id;
 		this.libelle = libelle;
+	}
+	
+	/**
+	 * A constructor.
+	 * 
+	 * @param	libelle		String		The grammatical category name.
+	 * @param	sousLibelle	String		The grammatical sub-category name.
+	 */
+	public CGram(String libelle, String sousLibelle) {
+		this.libelle = libelle;
+		this.sousLibelle = sousLibelle;
+	}
+	
+	/**
+	 * A constructor.
+	 * 
+	 * @param	id			int			The grammatical category id.
+	 * @param	libelle		String		The grammatical category name.
+	 * @param	sousLibelle	String		The grammatical sub-category name.
+	 */
+	public CGram(int id, String libelle, String sousLibelle) {
+		this.id = id;
+		this.libelle = libelle;
+		this.sousLibelle = sousLibelle;
 	}
 
 	/**
@@ -105,13 +134,32 @@ public abstract class CGram implements Serializable {
 	}
 
 	/**
+	 * Gets the sub-category name.
+	 * 
+	 * @return	String	The grammatical sub-category name.
+	 */
+	public String getSousLibelle() {
+		return sousLibelle;
+	}
+
+	/**
+	 * Sets the sub-category name.
+	 * 
+	 * @param	sousLibelle	String	The grammatical sub-category name.
+	 */
+	public void setSousLibelle(String sousLibelle) {
+		this.sousLibelle = sousLibelle;
+	}
+	
+	/**
 	 * Returns an instance description.
 	 * 
 	 * @return	String	An instance description.
 	 */
 	@Override
 	public String toString() {
-		return "CGram [id=" + id + ", libelle=" + libelle + "]";
+		return "CGram [id=" + id + ", libelle=" + libelle + ", sousLibelle="
+				+ sousLibelle + "]";
 	}
 
 }

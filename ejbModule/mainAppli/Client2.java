@@ -13,8 +13,6 @@ import javax.persistence.Persistence;
 import clientServer.parameter.EntityParameters;
 import clientServer.parameter.ParametersI;
 import clientServer.service.ServiceFacadeI;
-import entity.CGramAdjectif;
-import entity.CGramArticle;
 
 
 public class Client2 {
@@ -22,8 +20,8 @@ public class Client2 {
 	public static void main(String[] args) throws ParseException, NamingException {
 		
 		
-		CGramArticle art = new CGramArticle();
-		System.out.println(art);
+		//CGramArticle art = new CGramArticle();
+		//System.out.println(art);
 		
 		/*
 		

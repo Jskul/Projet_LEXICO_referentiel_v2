@@ -164,28 +164,34 @@ public interface EntityParameters {
 	public static final String CGRAM_FIELD_LIBELLE_NAME = "libelle";
 	public static final boolean CGRAM_FIELD_LIBELLE_NULLABLE = false;
 	
-	/*
-	 * Entity: CGramArticle
-	 */
-	public static final String TABLE_CGRAM_ARTICLE_NAME = "CGramArticle";
-	
-	public static final String CGRAM_ARTICLE_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
-	public static final boolean CGRAM_ARTICLE_FIELD_SOUS_LIBELLE_NULLABLE = true;
+	public static final String CGRAM_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
+	public static final boolean CGRAM_FIELD_SOUS_LIBELLE_NULLABLE = true;
 	
 	/*
-	 * Entity: CGramAdjectif
+	 * Entity: Flexion
 	 */
-	public static final String TABLE_CGRAM_ADJECTIF_NAME = "CGramAdjectif";
-	
-	public static final String CGRAM_ADJECTIF_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
-	public static final boolean CGRAM_ADJECTIF_FIELD_SOUS_LIBELLE_NULLABLE = true;
+	public static final String TABLE_FLEXION_NAME = "Flexion";
+
+	public static final String FLEXION_FIELD_ID_NAME = "id";
+	public static final boolean FLEXION_FIELD_ID_NULLABLE = false;
+
+	/*
+	 * Entity: FlexionNominale
+	 */
+	public static final String TABLE_FLEXION_NOMINALE_NAME = "FlexionNominale";
+
+	public static final String FLEXION_NOMINALE_FIELD_GENRE_NAME = "genre";
+	public static final boolean FLEXION_NOMINALE_FIELD_GENRE_NULLABLE = true;
+
+	public static final String FLEXION_NOMINALE_FIELD_NOMBRE_NAME = "nombre";
+	public static final boolean FLEXION_NOMINALE_FIELD_NOMBRE_NULLABLE = true;
 	
 	/*
-	 * Entity: CGramPronom
+	 * Entity: FlexionInvariable
 	 */
-	public static final String TABLE_CGRAM_PRONOM_NAME = "CGramAdjectif";
-	
-	public static final String CGRAM_PRONOM_FIELD_SOUS_LIBELLE_NAME = "sousLibelle";
-	public static final boolean CGRAM_PRONOM_FIELD_SOUS_LIBELLE_NULLABLE = true;
+	public static final String TABLE_FLEXION_INVARIABLE_NAME = "FlexionInvariable";
+
+	public static final String FLEXION_INVARIABLE_FIELD_LIBELLE_NAME = "libelle";
+	public static final boolean FLEXION_INVARIABLE_FIELD_LIBELLE_NULLABLE = false;
 	
 }
